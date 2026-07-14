@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "charges": {
+    "feline": {
+      "lion_rampant": "assets/charges/feline/lion_rampant.svg",
+      "lion_passant": "assets/charges/feline/lion_passant.svg"
+    },
+    "fish": {
+      "trout_hauriant": "assets/charges/fish/trout_hauriant.svg",
+      "salmon_naiant": "assets/charges/fish/salmon_naiant.svg"
+    }
+  },
+  "divisions": {
+    "party_per_pale": "assets/divisions/pale.svg",
+    "party_per_fess": "assets/divisions/fess.svg",
+    "party_per_bend": "assets/divisions/bend.svg",
+    "quarterly": "assets/divisions/quarterly.svg"
+  }
+}
