@@ -1,0 +1,559 @@
+[
+  {
+    "version": "1.2",
+    "authority_context": "Historical",
+    "owner": "Kingdom of France (Modern)",
+    "blazon": "Azure, three fleurs-de-lys Or.",
+    "date_submitted": "1376-01-01",
+    "date_approved": "1376-01-01",
+    "notes": "Adopted by Charles V to replace France Ancient (which featured semé-de-lys).",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Azure"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "flora",
+              "specific_type": "fleur-de-lys",
+              "conflict_id": null,
+              "number": 3,
+              "tincture": "Or",
+              "posture": null,
+              "orientation": "two and one",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "British_CoA",
+    "owner": "George Washington",
+    "blazon": "Argent, two bars Gules, in chief three mullets of the second.",
+    "date_approved": "1592-01-01",
+    "notes": "Granted to Washington's ancestors in England. Often cited as the inspiration for the flag of the United States.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Argent"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "ordinary",
+              "specific_type": "bar",
+              "conflict_id": null,
+              "number": 2,
+              "tincture": "Gules",
+              "posture": null,
+              "orientation": null,
+              "details": {}
+            }
+          ]
+        },
+        {
+          "group_type": "secondary",
+          "charges": [
+            {
+              "category": "celestial",
+              "specific_type": "mullet",
+              "conflict_id": null,
+              "number": 3,
+              "tincture": "Gules",
+              "posture": null,
+              "orientation": "in chief",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "British_CoA",
+    "owner": "William Shakespeare",
+    "blazon": "Or, on a bend Sable a spear of the first steeled Argent.",
+    "date_submitted": "1596-10-20",
+    "date_approved": "1596-10-20",
+    "notes": "Demonstrates nested charge groups. Granted to John Shakespeare, William's father, after significant effort.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Or"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "ordinary",
+              "specific_type": "bend",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Sable",
+              "posture": null,
+              "orientation": null,
+              "details": {},
+              "nested_charge_groups": [
+                {
+                  "group_type": "tertiary",
+                  "charges": [
+                    {
+                      "category": "weapon",
+                      "specific_type": "spear",
+                      "conflict_id": null,
+                      "number": 1,
+                      "tincture": "Or",
+                      "posture": null,
+                      "orientation": "palewise",
+                      "details": {
+                        "steeled": "Argent"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "British_CoA",
+    "owner": "Sir Winston Churchill",
+    "blazon": "Quarterly: 1st and 4th, Sable a lion rampant Argent on a canton of the second a cross Gules; 2nd and 3rd, quarterly Argent and Gules a fret Or, over all on a bend Sable three escallops of the first.",
+    "notes": "Demonstrates complex recursion, quartering, and sub-shields.",
+    "shield": {
+      "layout_type": "quarterly",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["transparent"]
+      },
+      "charge_groups": [],
+      "sub_shields": [
+        {
+          "layout_type": "simple",
+          "field": {
+            "is_divided": false,
+            "division_type": null,
+            "line_treatment": null,
+            "tinctures": ["Sable"]
+          },
+          "charge_groups": [
+            {
+              "group_type": "primary",
+              "charges": [
+                {
+                  "category": "beast",
+                  "specific_type": "lion",
+                  "conflict_id": null,
+                  "number": 1,
+                  "tincture": "Argent",
+                  "posture": "rampant",
+                  "orientation": null,
+                  "details": {}
+                }
+              ]
+            },
+            {
+              "group_type": "secondary",
+              "charges": [
+                {
+                  "category": "ordinary",
+                  "specific_type": "canton",
+                  "conflict_id": null,
+                  "number": 1,
+                  "tincture": "Argent",
+                  "posture": null,
+                  "orientation": null,
+                  "details": {},
+                  "nested_charge_groups": [
+                    {
+                      "group_type": "tertiary",
+                      "charges": [
+                        {
+                          "category": "ordinary",
+                          "specific_type": "cross",
+                          "conflict_id": null,
+                          "number": 1,
+                          "tincture": "Gules",
+                          "posture": null,
+                          "orientation": null,
+                          "details": {}
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "layout_type": "quarterly",
+          "field": {
+            "is_divided": false,
+            "division_type": null,
+            "line_treatment": null,
+            "tinctures": ["transparent"]
+          },
+          "charge_groups": [],
+          "sub_shields": [
+            {
+              "layout_type": "simple",
+              "field": {
+                "is_divided": false,
+                "division_type": null,
+                "line_treatment": null,
+                "tinctures": ["Argent"]
+              },
+              "charge_groups": []
+            },
+            {
+              "layout_type": "simple",
+              "field": {
+                "is_divided": false,
+                "division_type": null,
+                "line_treatment": null,
+                "tinctures": ["Gules"]
+              },
+              "charge_groups": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "SENA",
+    "owner": "Kingdom of the Middle",
+    "blazon": "Argent, a pale Gules, overall a dragon passant coward Vert, in chief a laurel wreath Sable.",
+    "date_submitted": "1973-01-01",
+    "date_approved": "1973-10-01",
+    "notes": "Demonstrates the use of an 'overall' charge group crossing over a primary ordinary.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Argent"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "ordinary",
+              "specific_type": "pale",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Gules",
+              "posture": null,
+              "orientation": null,
+              "details": {}
+            }
+          ]
+        },
+        {
+          "group_type": "overall",
+          "charges": [
+            {
+              "category": "monster",
+              "specific_type": "dragon",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Vert",
+              "posture": "passant coward",
+              "orientation": null,
+              "details": {}
+            }
+          ]
+        },
+        {
+          "group_type": "secondary",
+          "charges": [
+            {
+              "category": "flora",
+              "specific_type": "laurel wreath",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Sable",
+              "posture": null,
+              "orientation": "in chief",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "SENA",
+    "owner": "Kingdom of Trimaris",
+    "blazon": "Argent, on a fess wavy Azure between two triskelions, a crown of three points, all within a laurel wreath Azure.",
+    "date_approved": "1981-10-01",
+    "notes": "SCA Kingdom arms demonstrating a complex line treatment (wavy) on an ordinary.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Argent"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "ordinary",
+              "specific_type": "fess",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Azure",
+              "posture": null,
+              "orientation": null,
+              "details": {
+                "line_treatment": "wavy"
+              },
+              "nested_charge_groups": [
+                {
+                  "group_type": "tertiary",
+                  "charges": [
+                    {
+                      "category": "object",
+                      "specific_type": "crown",
+                      "conflict_id": null,
+                      "number": 1,
+                      "tincture": "Argent",
+                      "posture": null,
+                      "orientation": null,
+                      "details": {
+                        "points": 3
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_type": "secondary",
+          "charges": [
+            {
+              "category": "symbol",
+              "specific_type": "triskelion",
+              "conflict_id": null,
+              "number": 2,
+              "tincture": "Azure",
+              "posture": null,
+              "orientation": "between",
+              "details": {}
+            },
+            {
+              "category": "flora",
+              "specific_type": "laurel wreath",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Azure",
+              "posture": null,
+              "orientation": "surrounding all",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "Fictional_Generic",
+    "owner": "House Stark",
+    "blazon": "Per pale Argent and Cinereous, a direwolf's head cabossed proper.",
+    "notes": "A generic example to demonstrate a divided field using multiple tinctures.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": true,
+        "division_type": "per pale",
+        "line_treatment": null,
+        "tinctures": ["Argent", "Cinereous"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "beast",
+              "specific_type": "direwolf head",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "proper",
+              "posture": "cabossed",
+              "orientation": null,
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "College of Arms",
+    "owner": "Kingdom of England",
+    "blazon": "Gules, three lions passant guardant in pale Or.",
+    "date_approved": "1198-01-01",
+    "notes": "Adopted by Richard I (Richard the Lionheart).",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Gules"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "beast",
+              "specific_type": "lion",
+              "conflict_id": null,
+              "number": 3,
+              "tincture": "Or",
+              "posture": "passant guardant",
+              "orientation": "in pale",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "Chief Herald of Ireland",
+    "owner": "Republic of Ireland",
+    "blazon": "Azure, a harp Or stringed Argent.",
+    "date_approved": "1945-11-09",
+    "notes": "Official state arms of Ireland.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Azure"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "instrument",
+              "specific_type": "harp",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Or",
+              "posture": null,
+              "orientation": null,
+              "details": {
+                "stringed": "Argent"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "version": "1.2",
+    "authority_context": "Historical",
+    "owner": "Joan of Arc",
+    "blazon": "Azure, a sword palewise Argent hilted and pommeled Or supporting on its point a crown Or, between two fleurs-de-lys of the last.",
+    "date_approved": "1429-06-02",
+    "notes": "Granted by Charles VII of France. Demonstrates complex positional details for secondary charges.",
+    "shield": {
+      "layout_type": "simple",
+      "field": {
+        "is_divided": false,
+        "division_type": null,
+        "line_treatment": null,
+        "tinctures": ["Azure"]
+      },
+      "charge_groups": [
+        {
+          "group_type": "primary",
+          "charges": [
+            {
+              "category": "weapon",
+              "specific_type": "sword",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Argent",
+              "posture": null,
+              "orientation": "palewise",
+              "details": {
+                "hilted": "Or",
+                "pommeled": "Or"
+              }
+            }
+          ]
+        },
+        {
+          "group_type": "secondary",
+          "charges": [
+            {
+              "category": "object",
+              "specific_type": "crown",
+              "conflict_id": null,
+              "number": 1,
+              "tincture": "Or",
+              "posture": null,
+              "orientation": "on point of sword",
+              "details": {}
+            },
+            {
+              "category": "flora",
+              "specific_type": "fleur-de-lys",
+              "conflict_id": null,
+              "number": 2,
+              "tincture": "Or",
+              "posture": null,
+              "orientation": "between",
+              "details": {}
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
