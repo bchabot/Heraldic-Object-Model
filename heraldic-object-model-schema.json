@@ -4,9 +4,11 @@
   "description": "Standardized JSON schema representing a parsed heraldic device for evaluation and rendering.",
   "type": "object",
   "properties": {
-    "version": {
+    "version": { "type": "string", "default": "1.1" },
+    "authority_context": {
       "type": "string",
-      "default": "1.1"
+      "description": "The heraldic college/authority defining the ruleset (e.g., 'SENA', 'British_CoA', 'Fictional_Generic').",
+      "default": "generic"
     },
     "layout_type": {
       "type": "string",
@@ -15,73 +17,42 @@
     },
     "field": {
       "type": "object",
-      "description": "The background of the shield.",
       "properties": {
         "is_divided": { "type": "boolean" },
-        "division_type": { 
-          "type": ["string", "null"], 
-          "description": "e.g., 'party per pale', 'quarterly'" 
-        },
+        "division_type": { "type": ["string", "null"] },
         "tinctures": {
           "type": "array",
           "items": { "type": "string" },
-          "minItems": 1,
-          "description": "Single tincture for plain fields, multiple for divisions."
+          "minItems": 1
         }
       },
       "required": ["is_divided", "tinctures"]
     },
     "charge_groups": {
       "type": "array",
-      "description": "Array of charge groups (Primary, Secondary, Tertiary, Overall).",
       "items": {
         "type": "object",
         "properties": {
           "group_type": {
             "type": "string",
-            "enum": ["primary", "secondary", "tertiary", "overall"],
-            "description": "SENA charge group classification."
+            "enum": ["primary", "secondary", "tertiary", "overall"]
           },
           "charges": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "category": {
-                  "type": "string",
-                  "description": "Broad category for rules engine conflict checking (e.g., 'fish', 'feline', 'canine')."
-                },
-                "specific_type": {
-                  "type": "string",
-                  "description": "Exact classification for SVG rendering and blazon reconstruction."
-                },
-                "conflict_id": {
-                  "type": "string",
-                  "description": "Global heraldic registry ID for visual equivalence (SENA 'fish is a fish' logic)."
-                },
-                "number": {
-                  "type": "integer",
-                  "minimum": 1
-                },
-                "tincture": {
-                  "type": "string"
-                },
-                "posture": {
-                  "type": ["string", "null"],
-                  "description": "e.g., 'rampant', 'passant', 'hauriant'."
-                },
-                "orientation": {
-                  "type": ["string", "null"],
-                  "description": "e.g., 'fesswise', 'palewise'."
-                },
-                "details": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
+                "category": { "type": "string" },
+                "specific_type": { "type": "string" },
+                "conflict_id": { "type": ["string", "null"] },
+                "number": { "type": "integer", "minimum": 1 },
+                "tincture": { "type": "string" },
+                "posture": { "type": ["string", "null"] },
+                "orientation": { "type": ["string", "null"] },
+                "details": { "type": "object", "additionalProperties": true }
               },
-              "required": ["category", "specific_type", "conflict_id", "number", "tincture"]
-            },
-            "minItems": 1
+              "required": ["category", "specific_type", "number", "tincture"]
+            }
           }
         },
         "required": ["group_type", "charges"]
@@ -89,8 +60,7 @@
     },
     "augmentations": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "List of armorial augmentations granted to the device."
+      "items": { "type": "string" }
     }
   },
   "required": ["field", "charge_groups"]
