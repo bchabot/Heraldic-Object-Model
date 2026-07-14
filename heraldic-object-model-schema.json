@@ -6,7 +6,12 @@
   "properties": {
     "version": {
       "type": "string",
-      "default": "1.0"
+      "default": "1.1"
+    },
+    "layout_type": {
+      "type": "string",
+      "enum": ["simple", "marshalled", "impaled", "quarterly"],
+      "default": "simple"
     },
     "field": {
       "type": "object",
@@ -48,7 +53,11 @@
                 },
                 "specific_type": {
                   "type": "string",
-                  "description": "Exact classification for SVG rendering and blazon reconstruction (e.g., 'trout', 'lion', 'wolf')."
+                  "description": "Exact classification for SVG rendering and blazon reconstruction."
+                },
+                "conflict_id": {
+                  "type": "string",
+                  "description": "Global heraldic registry ID for visual equivalence (SENA 'fish is a fish' logic)."
                 },
                 "number": {
                   "type": "integer",
@@ -67,17 +76,21 @@
                 },
                 "details": {
                   "type": "object",
-                  "description": "Additional minor details (e.g., 'armed and langued gules').",
                   "additionalProperties": true
                 }
               },
-              "required": ["category", "specific_type", "number", "tincture"]
+              "required": ["category", "specific_type", "conflict_id", "number", "tincture"]
             },
             "minItems": 1
           }
         },
         "required": ["group_type", "charges"]
       }
+    },
+    "augmentations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of armorial augmentations granted to the device."
     }
   },
   "required": ["field", "charge_groups"]
