@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Heraldic Object Model (HOM)",
+  "description": "Standardized JSON schema representing a parsed heraldic device for evaluation and rendering.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "1.0"
+    },
+    "field": {
+      "type": "object",
+      "description": "The background of the shield.",
+      "properties": {
+        "is_divided": { "type": "boolean" },
+        "division_type": { 
+          "type": ["string", "null"], 
+          "description": "e.g., 'party per pale', 'quarterly'" 
+        },
+        "tinctures": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Single tincture for plain fields, multiple for divisions."
+        }
+      },
+      "required": ["is_divided", "tinctures"]
+    },
+    "charge_groups": {
+      "type": "array",
+      "description": "Array of charge groups (Primary, Secondary, Tertiary, Overall).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "group_type": {
+            "type": "string",
+            "enum": ["primary", "secondary", "tertiary", "overall"],
+            "description": "SENA charge group classification."
+          },
+          "charges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "string",
+                  "description": "Broad category for rules engine conflict checking (e.g., 'fish', 'feline', 'canine')."
+                },
+                "specific_type": {
+                  "type": "string",
+                  "description": "Exact classification for SVG rendering and blazon reconstruction (e.g., 'trout', 'lion', 'wolf')."
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "tincture": {
+                  "type": "string"
+                },
+                "posture": {
+                  "type": ["string", "null"],
+                  "description": "e.g., 'rampant', 'passant', 'hauriant'."
+                },
+                "orientation": {
+                  "type": ["string", "null"],
+                  "description": "e.g., 'fesswise', 'palewise'."
+                },
+                "details": {
+                  "type": "object",
+                  "description": "Additional minor details (e.g., 'armed and langued gules').",
+                  "additionalProperties": true
+                }
+              },
+              "required": ["category", "specific_type", "number", "tincture"]
+            },
+            "minItems": 1
+          }
+        },
+        "required": ["group_type", "charges"]
+      }
+    }
+  },
+  "required": ["field", "charge_groups"]
+}
