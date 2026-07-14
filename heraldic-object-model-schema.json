@@ -1,67 +1,116 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Heraldic Object Model (HOM)",
+  "title": "Heraldic Object Model (HOM) - Updated",
   "description": "Standardized JSON schema representing a parsed heraldic device for evaluation and rendering.",
   "type": "object",
   "properties": {
-    "version": { "type": "string", "default": "1.1" },
+    "version": { "type": "string", "default": "1.2" },
     "authority_context": {
       "type": "string",
-      "description": "The heraldic college/authority defining the ruleset (e.g., 'SENA', 'British_CoA', 'Fictional_Generic').",
+      "description": "The heraldic college/authority defining the ruleset.",
       "default": "generic"
     },
-    "layout_type": {
+    "owner": {
       "type": "string",
-      "enum": ["simple", "marshalled", "impaled", "quarterly"],
-      "default": "simple"
+      "description": "The person, entity, or kingdom to whom the device belongs."
     },
-    "field": {
-      "type": "object",
-      "properties": {
-        "is_divided": { "type": "boolean" },
-        "division_type": { "type": ["string", "null"] },
-        "tinctures": {
-          "type": "array",
-          "items": { "type": "string" },
-          "minItems": 1
-        }
-      },
-      "required": ["is_divided", "tinctures"]
+    "blazon": {
+      "type": "string",
+      "description": "The official heraldic description (blazon) of the device."
     },
-    "charge_groups": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "group_type": {
-            "type": "string",
-            "enum": ["primary", "secondary", "tertiary", "overall"]
-          },
-          "charges": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "category": { "type": "string" },
-                "specific_type": { "type": "string" },
-                "conflict_id": { "type": ["string", "null"] },
-                "number": { "type": "integer", "minimum": 1 },
-                "tincture": { "type": "string" },
-                "posture": { "type": ["string", "null"] },
-                "orientation": { "type": ["string", "null"] },
-                "details": { "type": "object", "additionalProperties": true }
-              },
-              "required": ["category", "specific_type", "number", "tincture"]
-            }
-          }
-        },
-        "required": ["group_type", "charges"]
-      }
+    "date_submitted": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the device was submitted for registration (e.g., YYYY-MM-DD)."
     },
-    "augmentations": {
-      "type": "array",
-      "items": { "type": "string" }
+    "date_approved": {
+      "type": "string",
+      "format": "date",
+      "description": "The date the device was approved or registered (e.g., YYYY-MM-DD)."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional context, historical information, or general notes regarding the device."
+    },
+    "shield": { 
+      "$ref": "#/$defs/shield_definition" 
     }
   },
-  "required": ["field", "charge_groups"]
+  "required": ["owner", "blazon", "shield"],
+  "$defs": {
+    "shield_definition": {
+      "type": "object",
+      "properties": {
+        "layout_type": {
+          "type": "string",
+          "enum": ["simple", "marshalled", "impaled", "quarterly"],
+          "default": "simple"
+        },
+        "field": {
+          "type": "object",
+          "properties": {
+            "is_divided": { "type": "boolean" },
+            "division_type": { "type": ["string", "null"] },
+            "line_treatment": { 
+              "type": ["string", "null"],
+              "description": "Modifiers for the division line (e.g., wavy, embattled)."
+            },
+            "tinctures": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          },
+          "required": ["is_divided", "tinctures"]
+        },
+        "charge_groups": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/charge_group_definition" }
+        },
+        "sub_shields": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/shield_definition" },
+          "description": "Used recursively when layout_type is quarterly, marshalled, or impaled."
+        },
+        "augmentations": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["layout_type"]
+    },
+    "charge_group_definition": {
+      "type": "object",
+      "properties": {
+        "group_type": {
+          "type": "string",
+          "enum": ["primary", "secondary", "tertiary", "overall"]
+        },
+        "charges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string", "description": "Optional unique ID for establishing specific references." },
+              "category": { "type": "string" },
+              "specific_type": { "type": "string" },
+              "conflict_id": { "type": ["string", "null"] },
+              "number": { "type": "integer", "minimum": 1 },
+              "tincture": { "type": "string" },
+              "posture": { "type": ["string", "null"] },
+              "orientation": { "type": ["string", "null"] },
+              "details": { "type": "object", "additionalProperties": true },
+              "nested_charge_groups": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/charge_group_definition" },
+                "description": "Allows for tertiary charges placed directly on this specific charge."
+              }
+            },
+            "required": ["category", "specific_type", "number", "tincture"]
+          }
+        }
+      },
+      "required": ["group_type", "charges"]
+    }
+  }
 }
